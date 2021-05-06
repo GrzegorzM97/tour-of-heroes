@@ -1,0 +1,19 @@
+<h2>Enemies</h2>
+
+<div>
+  <label id="new-hero">Enemy name: </label>
+  <input for="new-hero" #enemyName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(enemyName.value); enemyName.value=''">
+    Add enemy
+  </button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let enemy of enemies">
+      <span class="badge">{{enemy.id}}</span> {{enemy.name}}
+    <button class="delete" title="delete enemy"
+      (click)="delete(enemy)">x</button>
+  </li>
+</ul>

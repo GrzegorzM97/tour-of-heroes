@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from './hero';
+import { Enemy } from './enemy';
 
 @Injectable({
   providedIn: 'root',
@@ -19,8 +20,19 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Magma' },
       { id: 20, name: 'Tornado' }
     ];
-    return {heroes};
+
+    const enemies = [
+      { id: 1, name: 'Joker' },
+      { id: 2, name: 'Mis' },
+      { id: 3, name: 'Gargamel' }
+    ];
+
+    return {heroes, enemies}; 
   }
+
+ 
+
+  
 
   // Overrides the genId method to ensure that a hero always has an id.
   // If the heroes array is empty,
@@ -30,4 +42,5 @@ export class InMemoryDataService implements InMemoryDbService {
   genId(heroes: Hero[]): number {
     return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
   }
+
 }
