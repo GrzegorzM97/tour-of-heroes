@@ -1,0 +1,41 @@
+<p>Lets batle!</p>
+<!-- <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a>
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+      
+    </li>
+  </ul>
+
+  <ul class="heroes">
+    <li *ngFor="let enemy of enemies">
+      <a>
+        <span class="badge">{{enemy.id}}</span> {{enemy.name}}
+      </a>
+      
+    </li>
+  </ul> -->
+
+  <p>Choose your hero!</p>
+  <div class="hero">
+    <select (change)="selectHero($event)">
+        <option *ngFor="let hero of heroes">
+            {{hero.name}}
+        </option>
+    </select>
+  </div>
+  <br>
+  <p>Choose your enemy!</p>
+  <select (change)="selectEnemy($event)">
+    <option *ngFor="let enemy of enemies">
+        {{enemy.name}}
+    </option>
+</select>
+<br>
+<br>
+<button title="Batle!"
+      (click)="batle()">Batle!</button>
+
+<br>
+<h3>{{batleWinner}}</h3>
