@@ -6,4 +6,11 @@
   </a>
 </div>
 
+<h2>Top Enemies</h2>
+<div class="heroes-menu">
+  <a *ngFor="let enemy of enemies">
+      {{enemy.name}}
+  </a>
+</div>
+
 <app-hero-search></app-hero-search>

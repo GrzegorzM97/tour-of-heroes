@@ -12,7 +12,7 @@
 
 <ul class="heroes">
   <li *ngFor="let enemy of enemies">
-      <span class="badge">{{enemy.id}}</span> {{enemy.name}}
+      <a><span class="badge">{{enemy.id}}</span> {{enemy.name}}</a>
     <button class="delete" title="delete enemy"
       (click)="delete(enemy)">x</button>
   </li>
